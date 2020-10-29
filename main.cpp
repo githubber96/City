@@ -1,5 +1,3 @@
-// Info about a City.cpp : Diese Datei enthält die Funktion "main". Hier beginnt und endet die Ausführung des Programms.
-//
 #include "City.h"
 #include <iostream>
 #include <istream>
@@ -13,12 +11,12 @@ using namespace std;
 int main()
 {
     cout << "Chose your city from the following: Munich, Berlin, Hamburg" << endl;
-    City city;
-    string name = city.choseCity(in());
-    city.footballclub(name);
-    string newName = city.getDistrict(name);
-
-    District district;
-    district.seperateStrings(newName);
+    auto name = choseCity();
+    City city(name);
+    city.getName();
+    city.getFootballclub(true);
+    printTable();
+    city.getDistricts();
+    city.population();
 
 }
